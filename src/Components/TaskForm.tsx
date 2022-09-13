@@ -30,7 +30,7 @@ export default function TaskForm({ newAddTask }: props) {
     inputTitle.current?.focus();
   };
   return (
-    <div className="card card-body bg-secondary text-dark">
+    <div className="card card-body bg-secondary text-dark mb-3">
       <h1> Add Task</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -42,6 +42,7 @@ export default function TaskForm({ newAddTask }: props) {
           value={task.title}
           autoFocus
           ref={inputTitle}
+          required
         />
 
         <textarea
@@ -50,6 +51,7 @@ export default function TaskForm({ newAddTask }: props) {
           className="form-control mb-3 shadow-none border"
           onChange={handleInputChange}
           value={task.description}
+          required
         ></textarea>
 
         <button className="btn btn-primary">
